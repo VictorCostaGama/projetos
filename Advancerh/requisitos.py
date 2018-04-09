@@ -10,9 +10,6 @@ def requisitos(lista_informacao):
     for requerir in lista_informacao:
         requerir = requerir.find_all('p')
         requerir = str(requerir)
-        find = '</strong></p>, '
-        posicao = int(requerir.index(find) + len(find))
-        requerir = requerir[posicao : posicao + len(requerir)]
         
         cleanr = re.compile('<.*?>')
         cleantext = re.sub(cleanr, '', requerir)
@@ -23,7 +20,12 @@ def requisitos(lista_informacao):
         
         cleantext = cleantext.replace("mD", "m D")
         cleantext = cleantext.replace(".,", ".")
-        cleantext = str(cleantext)
-        lista_def.append(cleantext)
+        cleantext = cleantext.replace(" ::, ", "" + "\n\n")
+
+        for i in range(0, len(cleantext)):
+            cleantext = cleantext.replace(" ::  ", "")
+            cleantext = cleantext.replace(" :: ", "")
+
+        lista_def.append(cleantext + "\n\n========================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================================\n\n")
     
     return lista_def
