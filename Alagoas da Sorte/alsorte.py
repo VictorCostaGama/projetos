@@ -29,13 +29,26 @@ for i in range(10, 61):
 	s = c + str(l.count(a))
 	lst.append(s)
 
-arq = open('padroes.txt', 'w')
-for i in range(0, len(lst)):
-	if i == 6 or i == 12 or i == 18 or i == 24 or i == 30 or i == 36 or i == 42 or i == 48 or i == 54:
-		arq.write('\n\n')
+stre = soup.find_all('div', id='resultados_edicao')
 
-	arq.writelines(lst[i])
-	arq.write('     ')
+for ert in stre:
+	title = ert.p.get_text()
+
+arq = open('Padroes.txt', 'w')
+arq.write('|-------------------------------------------------------------------------------------------------------------------|')
+arq.write('\n|                                                                                                                   |\n|                                    LISTA '+ title + '                                            |')
+arq.write('\n|                                                                                                                   |\n|-------------------------------------------------------------------------------------------------------------------|\n')
+arq.write('|                                                                                                                   |\n|                                                                                                                   |\n')
+for i in range(0, len(lst)):
+	if i ==0:
+		arq.write('|')
+	if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 or i == 61:
+		arq.write('|\n|                                                                                                                   |\n|')
+
+	arq.writelines('    ' + lst[i])
+	arq.write('    ')
+	
+arq.write('|\n|                                                                                                                   |\n|-------------------------------------------------------------------------------------------------------------------|')
 arq.close()
 		
 	
