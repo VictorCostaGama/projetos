@@ -40,7 +40,7 @@ arq.write('\n|                                                                  
 arq.write('\n|                                                                                                                   |\n|-------------------------------------------------------------------------------------------------------------------|\n')
 arq.write('|                                                                                                                   |\n|                                                                                                                   |\n')
 for i in range(0, len(lst)):
-	if i ==0:
+	if i == 0:
 		arq.write('|')
 	if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 or i == 61:
 		arq.write('|\n|                                                                                                                   |\n|')
