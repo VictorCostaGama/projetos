@@ -1,0 +1,32 @@
+|-------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                   |
+|                                    LISTA RESULTADOS: EDIÇÃO 15/04/2018                                            |
+|                                                                                                                   |
+|-------------------------------------------------------------------------------------------------------------------|
+|                                                                                                                   |
+|                                                                                                                   |
+|    O numero 01 = 2        O numero 02 = 1        O numero 03 = 3        O numero 04 = 4        O numero 05 = 2    |
+|                                                                                                                   |
+|    O numero 06 = 3        O numero 07 = 3        O numero 08 = 2        O numero 09 = 4        O numero 10 = 2    |
+|                                                                                                                   |
+|    O numero 11 = 2        O numero 12 = 3        O numero 13 = 0        O numero 14 = 4        O numero 15 = 4    |
+|                                                                                                                   |
+|    O numero 16 = 3        O numero 17 = 3        O numero 18 = 3        O numero 19 = 2        O numero 20 = 3    |
+|                                                                                                                   |
+|    O numero 21 = 3        O numero 22 = 4        O numero 23 = 2        O numero 24 = 3        O numero 25 = 2    |
+|                                                                                                                   |
+|    O numero 26 = 1        O numero 27 = 2        O numero 28 = 3        O numero 29 = 3        O numero 30 = 3    |
+|                                                                                                                   |
+|    O numero 31 = 3        O numero 32 = 1        O numero 33 = 3        O numero 34 = 2        O numero 35 = 4    |
+|                                                                                                                   |
+|    O numero 36 = 2        O numero 37 = 1        O numero 38 = 2        O numero 39 = 3        O numero 40 = 3    |
+|                                                                                                                   |
+|    O numero 41 = 2        O numero 42 = 3        O numero 43 = 3        O numero 44 = 1        O numero 45 = 3    |
+|                                                                                                                   |
+|    O numero 46 = 4        O numero 47 = 2        O numero 48 = 2        O numero 49 = 3        O numero 50 = 2    |
+|                                                                                                                   |
+|    O numero 51 = 2        O numero 52 = 1        O numero 53 = 1        O numero 54 = 2        O numero 55 = 3    |
+|                                                                                                                   |
+|    O numero 56 = 3        O numero 57 = 2        O numero 58 = 3        O numero 59 = 1        O numero 60 = 2    |
+|                                                                                                                   |
+|-------------------------------------------------------------------------------------------------------------------|
