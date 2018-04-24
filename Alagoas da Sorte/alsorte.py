@@ -1,52 +1,67 @@
 import requests
 from bs4 import BeautifulSoup
+from alst import informacao
+
 
 url = 'http://site.alagoasdasorte.com.br/index.php/resultados'
+	
+rqt = requests.get(url)
 
-r = requests.get(url)
+soup = BeautifulSoup(rqt.text, 'lxml')
 
-soup = BeautifulSoup(r.text, 'lxml')
+system = soup.find_all('select')
 
-system = soup.find_all('div', id='noshow')
+valor = []
 
-l = []
+for data in system:
+	date = data.find_all('option')
+	for dat in date:
+		d = dat.get('value')
+		if d != '0':
+			valor.append(d)
+l_g = []
 
-for response in system:
-	rts = response.find_all('td')
-	for rt in rts:
-		tr = rt.get_text()
-		l.append(tr)
+arq = open('Padroes.txt', 'w')
+
+for i in range(0, len(valor)):
+	p = valor[i]
+	data = {'resultado_id':p}
+
+	r = requests.post(url, data=data)
+
+	soup = BeautifulSoup(r.text, 'lxml')
+
+	g = informacao(soup, l_g)
+
 lst = []
+
 for i in range(1, 10):
 	a = '0' + str(i)
 	c = 'O numero ' + a + ' = '
-	t = c + str(l.count(a))
+	t = c + str(g.count(a))
 	lst.append(t)
-
+		
 for i in range(10, 61):
 	a = str(i)
 	c = 'O numero ' + a + ' = '
-	s = c + str(l.count(a))
+	s = c + str(g.count(a))
 	lst.append(s)
 
-stre = soup.find_all('div', id='resultados_edicao')
-
-for ert in stre:
-	title = ert.p.get_text()
-
-arq = open('Padroes.txt', 'w')
-arq.write('|-------------------------------------------------------------------------------------------------------------------|')
-arq.write('\n|                                                                                                                   |\n|                                    LISTA '+ title + '                                            |')
-arq.write('\n|                                                                                                                   |\n|-------------------------------------------------------------------------------------------------------------------|\n')
-arq.write('|                                                                                                                   |\n|                                                                                                                   |\n')
+arq = open('Padroes.txt', 'a')
+arq.write('|-----------------------------------------------------------------------------------------------------------------------------|')
+arq.write('\n|                                                                                                                             |\n|                                                   LISTA  GERAL                                                              |')
+arq.write('\n|                                                                                                                             |\n|-----------------------------------------------------------------------------------------------------------------------------|\n')
+arq.write('|                                                                                                                             |\n|                                                                                                                             |\n')
 for i in range(0, len(lst)):
 	if i == 0:
 		arq.write('|')
 	if i == 5 or i == 10 or i == 15 or i == 20 or i == 25 or i == 30 or i == 35 or i == 40 or i == 45 or i == 50 or i == 55 or i == 60 or i == 61:
-		arq.write('|\n|                                                                                                                   |\n|')
+		arq.write('|\n|                                                                                                                             |\n|')
 
 	arq.writelines('    ' + lst[i])
 	arq.write('    ')
-	
-arq.write('|\n|                                                                                                                   |\n|-------------------------------------------------------------------------------------------------------------------|')
+		
+arq.write('|\n|                                                                                                                             |\n|-----------------------------------------------------------------------------------------------------------------------------|')
+arq.close()
+
 arq.close()
