@@ -1,5 +1,6 @@
 import requests
 from bs4 import BeautifulSoup
+from arielleProd import raspagens
 
 url = 'http://www.arielle.com.br/produtos/listar?infinite=true'
 
@@ -19,4 +20,4 @@ for i in range(1, 7):
         url_produto = url_p.a.get('href')
         lista_url_produto.append(url_produto)
 
-print(lista_url_produto)
+raspagens(lista_url_produto)
